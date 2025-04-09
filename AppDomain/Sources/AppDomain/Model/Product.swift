@@ -12,5 +12,7 @@ public struct Product: Codable, Identifiable {
     public let title: String
     public let description: String
     public let price: Double
+    public let discountPercentage: Double
     public let rating: Double
+    public let stock: Int
 }

@@ -22,11 +22,14 @@ struct ContentView: View {
                 ScrollView {
                     LazyVStack {
                         ForEach(viewModel.model.products) { item in
-                            ItemView(model: .init(
-                                title: item.title,
-                                description: item.description,
-                                rate: item.rating
-                            ))
+                            NavigationLink(destination: ContentDetailView(model: .init(product: item))) {
+                                ItemView(model: .init(
+                                    title: item.title,
+                                    description: item.description,
+                                    rate: item.rating
+                                ))
+                            }
+                            .buttonStyle(PlainButtonStyle())
                             .onAppear {
                                 if viewModel.model.products.last?.id == item.id {
                                     viewModel.getProducts()

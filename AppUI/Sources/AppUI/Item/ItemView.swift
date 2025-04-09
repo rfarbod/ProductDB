@@ -29,11 +29,20 @@ public struct ItemView: View {
             
             Text(model.description)
                 .font(.caption)
+                .padding()
             
             Spacer()
                     
-            Text("\(model.rate)")
+            Text("Rating: \(model.rate)")
                 .font(.title3)
+            
+            if model.isDetailed {
+                Text("Discounted Price: \(model.discountedPrice)")
+                    .font(.title3)
+                
+                Text("Stock: \(model.stock)")
+                    .font(.title3)
+            }
             
             Divider()
         }

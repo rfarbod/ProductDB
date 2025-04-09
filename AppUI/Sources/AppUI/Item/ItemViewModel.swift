@@ -12,6 +12,9 @@ public struct ItemViewModel: Sendable {
     public let description: String
     public let rate: Double
     public let price: Double
+    public let discountedPrice: Double
+    public let stock: Int
+    public let isDetailed: Bool
     
     public var imgeResource: Image? {
         switch rate {
@@ -30,12 +33,18 @@ public struct ItemViewModel: Sendable {
         title: String = Self.default.title,
         description: String = Self.default.description,
         rate: Double = Self.default.rate,
-        price: Double = Self.default.price
+        price: Double = Self.default.price,
+        discountedPrice: Double = Self.default.discountedPrice,
+        stock: Int = Self.default.stock,
+        isDetailed: Bool = Self.default.isDetailed
     ) {
         self.title = title
         self.description = description
         self.rate = rate
         self.price = price
+        self.discountedPrice = discountedPrice
+        self.stock = stock
+        self.isDetailed = isDetailed
     }
 }
 
@@ -44,6 +53,9 @@ extension ItemViewModel {
         title: "",
         description: "",
         rate: 0,
-        price: 0
+        price: 0,
+        discountedPrice: 0,
+        stock: 0,
+        isDetailed: false
     )
 }
