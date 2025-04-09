@@ -18,7 +18,7 @@ enum ResponseType { case json }
 let baseURL = "https://dummyjson.com/docs/products"
 
 public protocol RequestProtocol {
-    var baseUR: String { get }
+    var baseURL: String { get }
     var path: String { get }
     var method: RequestMethod { get }
     var parameters: RequestParameters? { get }
@@ -59,5 +59,23 @@ extension RequestProtocol {
         request.cachePolicy = .returnCacheDataElseLoad
         
         return request
+    }
+    
+    func verifyResponse(data: Data, response: URLResponse) throws -> Data {
+        guard let httpResponse = response as? HTTPURLResponse else {
+            throw APIError.unknown
+        }
+        switch httpResponse.statusCode {
+        case 200...299:
+            return data
+        case 401:
+            throw APIError.authError
+        case 400...499:
+            throw APIError.badRequest
+        case 500...599:
+            throw APIError.serverError
+        default:
+            throw APIError.unknown
+        }
     }
 }
