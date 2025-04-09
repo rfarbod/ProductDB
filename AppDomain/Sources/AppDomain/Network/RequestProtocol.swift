@@ -15,7 +15,7 @@ public enum RequestMethod: String { case get = "GET" }
 enum RequestType { case data }
 enum ResponseType { case json }
 
-let baseURL = "https://dummyjson.com/docs/products"
+let baseURL = "https://dummyjson.com"
 
 public protocol RequestProtocol {
     var baseURL: String { get }
