@@ -20,9 +20,10 @@ public struct ItemView: View {
                 .font(.headline)
             
             HStack{
-                Image(systemName: "")
+                model.imgeResource?
+                    .resizable()
             }
-            .frame(width: 100, height: 150)
+            .frame(width: 50, height: 50)
             
             Spacer()
             
@@ -30,14 +31,11 @@ public struct ItemView: View {
                 .font(.caption)
             
             Spacer()
+                    
+            Text("\(model.rate)")
+                .font(.title3)
             
-            VStack {
-                Text("\(model.rate)")
-                    .font(.caption)
-                
-                Text("\(model.price) $")
-                    .font(.caption)
-            }
+            Divider()
         }
     }
 }

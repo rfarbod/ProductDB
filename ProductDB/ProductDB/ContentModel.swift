@@ -6,31 +6,27 @@
 //
 
 import AppDomain
+import Foundation
+import SwiftData
 
-struct ContentModel {
+@Model
+class ContentModel: Identifiable {
+    var id: UUID
     var isLoading: Bool
     var products: [Product]
     var page: Int
     var isFirstLoad: Bool
     
     init(
-        isLoading: Bool = Self.default.isLoading,
-        products: [Product] = Self.default.products,
-        page: Int = Self.default.page,
-        isFirstLoad: Bool = Self.default.isFirstLoad
+        isLoading: Bool,
+        products: [Product],
+        page: Int,
+        isFirstLoad: Bool
     ) {
+        self.id = UUID()
         self.isLoading = isLoading
         self.products = products
         self.page = page
         self.isFirstLoad = isFirstLoad
     }
-}
-
-extension ContentModel {
-    static let `default`: ContentModel = .init(
-        isLoading: false,
-        products: [],
-        page: 0,
-        isFirstLoad: true
-    )
 }

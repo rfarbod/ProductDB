@@ -5,11 +5,26 @@
 //  Created by Farbod on 4/9/25.
 //
 
+import SwiftUI
+
 public struct ItemViewModel: Sendable {
     public let title: String
     public let description: String
     public let rate: Double
     public let price: Double
+    
+    public var imgeResource: Image? {
+        switch rate {
+        case 0..<3:
+            return Image(systemName: "star")
+            
+        case 3..<4:
+            return Image(systemName: "star.leadinghalf.filled")
+            
+        default:
+            return Image(systemName: "star.fill")
+        }
+    }
     
     public init(
         title: String = Self.default.title,

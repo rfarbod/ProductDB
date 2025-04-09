@@ -6,12 +6,14 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
 struct ProductDBApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView(viewModel: .init(productsAPI: .init()))
+            ContentView(viewModel: .init(productsAPI: .init(), model: .init(isLoading: false, products: [], page: 0, isFirstLoad: true)))
         }
+        .modelContainer(for: ContentModel.self)
     }
 }

@@ -10,6 +10,7 @@ import SwiftUI
 
 struct ContentView: View {
     @ObservedObject private var viewModel: ContentViewModel
+    @Environment(\.modelContext) private var context
     
     init(viewModel: ContentViewModel) {
         self.viewModel = viewModel
@@ -23,7 +24,8 @@ struct ContentView: View {
                         ForEach(viewModel.model.products) { item in
                             ItemView(model: .init(
                                 title: item.title,
-                                description: item.description
+                                description: item.description,
+                                rate: item.rating
                             ))
                             .onAppear {
                                 if viewModel.model.products.last?.id == item.id {
@@ -35,6 +37,7 @@ struct ContentView: View {
                 }
             }
             .onAppear {
+                viewModel.context = context
                 viewModel.getProducts()
                 
                 if viewModel.model.isFirstLoad {
@@ -45,8 +48,4 @@ struct ContentView: View {
         }
         .navigationTitle("Products")
     }
-}
-
-#Preview {
-    ContentView(viewModel: .init(productsAPI: .init()))
 }
