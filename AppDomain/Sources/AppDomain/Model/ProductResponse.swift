@@ -8,5 +8,5 @@
 import Foundation
 
 public struct ProductResponse: Codable {
-    let products: [Product]
+    public let products: [Product]
 }

@@ -15,7 +15,7 @@ public enum RequestMethod: String { case get = "GET" }
 enum RequestType { case data }
 enum ResponseType { case json }
 
-let baseURL = "https://dummyjson.com"
+let baseUrl = "https://dummyjson.com"
 
 public protocol RequestProtocol {
     var baseURL: String { get }
@@ -27,7 +27,7 @@ public protocol RequestProtocol {
 }
 
 extension RequestProtocol {
-    var baseURL: String { baseURL }
+    var baseURL: String { baseUrl }
     var method: RequestMethod { .get }
     var requestType: RequestType { .data }
     var responseType: ResponseType { .json }

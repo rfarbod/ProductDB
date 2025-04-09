@@ -7,10 +7,10 @@
 
 import Foundation
 
-public struct Product: Codable {
-    let id: Int
-    let title: String
-    let description: String
-    let price: Double
-    let rating: Double
+public struct Product: Codable, Identifiable {
+    public let id: Int
+    public let title: String
+    public let description: String
+    public let price: Double
+    public let rating: Double
 }
