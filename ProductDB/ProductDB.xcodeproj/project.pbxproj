@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		0A2CD0AB2DA69DC40009C6DF /* AppDomain in Frameworks */ = {isa = PBXBuildFile; productRef = 0A2CD0AA2DA69DC40009C6DF /* AppDomain */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		0A2CD09B2DA68E820009C6DF /* ProductDB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProductDB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -23,6 +27,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A2CD0AB2DA69DC40009C6DF /* AppDomain in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +70,7 @@
 			);
 			name = ProductDB;
 			packageProductDependencies = (
+				0A2CD0AA2DA69DC40009C6DF /* AppDomain */,
 			);
 			productName = ProductDB;
 			productReference = 0A2CD09B2DA68E820009C6DF /* ProductDB.app */;
@@ -94,6 +100,9 @@
 			);
 			mainGroup = 0A2CD0922DA68E820009C6DF;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				0A2CD0A92DA69DC40009C6DF /* XCLocalSwiftPackageReference "../AppDomain" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 0A2CD09C2DA68E820009C6DF /* Products */;
 			projectDirPath = "";
@@ -324,6 +333,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		0A2CD0A92DA69DC40009C6DF /* XCLocalSwiftPackageReference "../AppDomain" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../AppDomain;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0A2CD0AA2DA69DC40009C6DF /* AppDomain */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = AppDomain;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 0A2CD0932DA68E820009C6DF /* Project object */;
 }
